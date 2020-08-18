@@ -1,5 +1,4 @@
 // const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
-// const VuetifyLoaderPlugin = require('vuetify-loader/lib/plugin')
 let serverConfig = require('./server.config');
 export default {
   /*
@@ -64,7 +63,8 @@ export default {
     '~/plugins/axios',
     '~/plugins/router',
     { src: '~/plugins/ElementUI', ssr: true },
-    { src: '~/assets/js/iconfont', ssr: false },
+    { src: '~/static/js/iconfont', ssr: false },
+    { src: '~/plugins/sentry', ssr: false }
   ],
   /*
    ** Auto import components
@@ -80,14 +80,8 @@ export default {
    */
   modules: [
     '@nuxtjs/axios',
-    // '@nuxtjs/sentry',
     ['@nuxtjs/dotenv', { filename: `.env.${process.env.BASE ? process.env.BASE : 'development'}` }],
   ],
-  // sentry: {
-  //   dsn: 'https://f06d6a9f35dd42808fcb297ebb9f499c@sentry.io/2693467', // Enter your project's DSN here
-  //   config: {
-  //   }, // Additional config
-  // },
   // axios: {
   //   proxy: true, // 表示开启代理
   //   prefix: '/api', // 表示给请求url加个前缀 /api
@@ -110,22 +104,35 @@ export default {
    */
   build: {
     extractCSS: true,
-    // transpile: [/^vuetify/],
-    extend(config, ctx) {
-
-      // config.plugins.push(
-      //   new VuetifyLoaderPlugin()
-      // )
+    extend(config, { isDev, isClient }) {
+      if (isClient && !isDev) {
+        config.devtool = 'source-map'   // 处理client
+      }
       // config.plugins.unshift(new LodashModuleReplacementPlugin)
       // // rules[2].use[0] is babel-loader
       // config.module.rules[2].use[0].options.plugins = ['lodash']
     },
+    // 开启打包分析
+    // analyze: true, 	
+    // assetFilter: function(assetFilename) {	    		
+    //   return assetFilename.endsWith('.js');	    	
+    // },
     // 切割打包模块
     optimization: {
       splitChunks: {
+        chunks: 'all',
         minSize: 10000,
         maxSize: 250000,
-      },
+        // 拆分element
+        cacheGroups: {
+          elementui: {
+            test: /node_modules[\\/]element-ui/,
+            chunks: 'all',
+            priority: 20,
+            name: true
+          }
+        }
+      }
     },
     // 按需引入element-ui
     babel: {
