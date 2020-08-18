@@ -1,0 +1,34 @@
+{
+  "name": "ydw-nuxt",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development BASE=development nuxt",
+    "prod": "cross-env NODE_ENV=production BASE=production nuxt build",
+    "release": "cross-env NODE_ENV=production BASE=release nuxt build",
+    "test": "cross-env NODE_ENV=production BASE=test nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.12.1",
+    "@nuxtjs/dotenv": "^1.4.1",
+    "cross-env": "^7.0.2",
+    "element-ui": "^2.13.2",
+    "nuxt": "^2.14.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-component": "^1.1.1",
+    "eslint": "^7.7.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-html": "^6.0.3",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "lodash-webpack-plugin": "^0.11.5",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^9.0.3"
+  }
+}

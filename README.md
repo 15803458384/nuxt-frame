@@ -27,7 +27,7 @@ $ npm run generate
 // SEO优化
   head() {
     return {
-      title: "药兜网",
+      title: "标题",
       meta: [
         {
           hid: 'keywords',
