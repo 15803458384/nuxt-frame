@@ -78,7 +78,16 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/axios', ['@nuxtjs/dotenv', { filename: `.env.${process.env.BASE ? process.env.BASE : 'development'}` }]],
+  modules: [
+    '@nuxtjs/axios',
+    // '@nuxtjs/sentry',
+    ['@nuxtjs/dotenv', { filename: `.env.${process.env.BASE ? process.env.BASE : 'development'}` }],
+  ],
+  // sentry: {
+  //   dsn: 'https://f06d6a9f35dd42808fcb297ebb9f499c@sentry.io/2693467', // Enter your project's DSN here
+  //   config: {
+  //   }, // Additional config
+  // },
   // axios: {
   //   proxy: true, // 表示开启代理
   //   prefix: '/api', // 表示给请求url加个前缀 /api
@@ -103,7 +112,7 @@ export default {
     extractCSS: true,
     // transpile: [/^vuetify/],
     extend(config, ctx) {
-      
+
       // config.plugins.push(
       //   new VuetifyLoaderPlugin()
       // )
