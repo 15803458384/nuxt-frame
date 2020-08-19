@@ -1,4 +1,3 @@
-// const LodashModuleReplacementPlugin = require('lodash-webpack-plugin')
 let serverConfig = require('./server.config');
 export default {
   /*
@@ -63,7 +62,7 @@ export default {
     '~/plugins/axios',
     '~/plugins/router',
     { src: '~/plugins/ElementUI', ssr: true },
-    { src: '~/static/js/iconfont', ssr: false },
+    // { src: '~/static/js/iconfont', ssr: false },
     { src: '~/plugins/sentry', ssr: false }
   ],
   /*
@@ -108,9 +107,6 @@ export default {
       if (isClient && !isDev) {
         config.devtool = 'source-map'   // 处理client
       }
-      // config.plugins.unshift(new LodashModuleReplacementPlugin)
-      // // rules[2].use[0] is babel-loader
-      // config.module.rules[2].use[0].options.plugins = ['lodash']
     },
     // 开启打包分析
     // analyze: true, 	

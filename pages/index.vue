@@ -25,6 +25,15 @@
       <img style="width:150px;" src="../assets/img/p2326219915.jpg" alt="">
       <img style="width:150px;" src="../assets/img/p2404647190.jpg" alt="">
       <i class="iconfont icon-tianjiayonghu" style="font-size: 28px;"></i>
+      <i class="iconfont icon-Prompt" style="font-size: 28px;"></i>
+      <i class="iconfont icon-tianjiayonghu" style="font-size: 28px;"></i>
+      <i class="iconfont icon-tianjiayonghu" style="font-size: 28px;"></i>
+      <i class="iconfont icon-biaoxing" style="font-size: 28px;"></i>
+      <i class="iconfont icon-tianjiayonghu" style="font-size: 28px;"></i>
+      <i class="iconfont icon-tianjiayonghu" style="font-size: 28px;"></i>
+      <i class="iconfont icon-tongzhifill" style="font-size: 28px;"></i>
+      <i class="iconfont icon-tianjiayonghu" style="font-size: 28px;"></i>
+      <i class="iconfont icon-shizhong" style="font-size: 28px;"></i>
       <div v-for="item in friendList" :key="item.productId">
         {{item.productName}}
       </div>

@@ -5,7 +5,7 @@ import RavenVue from 'raven-js/plugins/vue';
 export default function ({ app, isDev }) {
 	if (!isDev) {
 		Raven
-			.config('https://e81ca568b8f24db6992d89f5f332f2b5@sentry.****.com/76')
+			.config('https://f06d6a9f35dd42808fcb297ebb9f499c@sentry.io/2693467')
 			.addPlugin(RavenVue, Vue)
 			.install();
 	}
