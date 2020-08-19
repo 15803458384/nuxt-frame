@@ -1,12 +1,12 @@
 <template>
   <div class="footer-container">
-      <h1>底部</h1>
+    <h1>底部</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Footer",
+  name: 'Footer',
   components: {},
   data() {
     return {};
@@ -14,7 +14,7 @@ export default {
   watch: {},
   created() {},
   mounted() {},
-  methods: {},
+  methods: {}
 };
 </script>
 

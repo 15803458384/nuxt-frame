@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "Header",
+  name: 'Header',
   components: {},
   data() {
     return {};
@@ -14,7 +14,7 @@ export default {
   watch: {},
   created() {},
   mounted() {},
-  methods: {},
+  methods: {}
 };
 </script>
 

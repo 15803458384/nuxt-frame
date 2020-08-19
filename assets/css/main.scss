@@ -1,3 +1,4 @@
-html,body {
-    background-color: pink;
-}
+@charset "utf-8";
+@import './base.scss';
+@import './element.scss';
+@import './common.scss';

@@ -1,0 +1,113 @@
+@charset "utf-8";
+
+// html {
+//     font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI",
+//       Roboto, "Helvetica Neue", Arial, sans-serif;
+//   }
+  
+html {
+    width: 100%;
+    height: 100%;
+    word-spacing: 1px;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+}
+body {width: 100%;height: 100%;min-height: 100%;}
+
+/* 取消链接高亮  */
+body, div, ul, li, ol, h1, h2, h3, h4, h5, h6, input, textarea, select, p, dl, dt, dd, a, img, button, form, table, th, tr, td, tbody, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    outline: none;
+}
+
+/* 设置HTML5元素为块 */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+/* 初始化 */
+body, div, ul, li, ol, h1, h2, h3, h4, h5, h6, input, textarea, select, p, dl, dt, dd, a, img, button, form, table, th, tr, td, tbody, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    margin: 0;
+    padding: 0; 
+    box-sizing:border-box;
+    -moz-box-sizing:border-box; /* Firefox */
+    -webkit-box-sizing:border-box; /* Safari */
+}
+body {
+    font: 12px/1.5 'Microsoft YaHei','宋体', Tahoma, Arial, sans-serif;
+    color: #555;
+}
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+em, i {
+    font-style: normal;
+}
+ul,li{
+    list-style-type: none;
+}
+ul, ol {
+    list-style: none;
+}
+strong {
+    font-weight: normal;
+}
+
+// a {
+//     text-decoration: none;
+//     color: #969696;
+//     font-family: 'Microsoft YaHei', Tahoma, Arial, sans-serif;
+// }
+// a:hover {
+//     text-decoration: none;
+// }
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-family: 'Microsoft YaHei';
+}
+img {
+    border: none;
+}
+input{
+    font-family: 'Microsoft YaHei';
+    caret-color:#4569e3; 
+}
+/* 禁止缩放表单 */
+input[type="submit"], input[type="reset"], input[type="button"], input {
+    resize: none;
+    border: none;
+}
+button {
+    border: none;
+    background-color: transparent;
+    outline: none; 
+}
+/* placeholder颜色字体 */
+input::-webkit-input-placeholder {
+    color: #BCBCBC;
+    font-size:32px;
+}
+input {
+    height: 100%;
+    font-size:32px;
+    outline: none;
+    -webkit-appearance: none;
+    border-radius: 0;
+    border: 0;
+}
+
+/*清除number的默认样式,就是那个上下加减的箭头*/
+// input::-webkit-outer-spin-button,
+// input::-webkit-inner-spin-button{
+//   -webkit-appearance: none !important;
+//   margin: 0;
+// }
+// input[type="number"]{-moz-appearance:textfield;}
+// /*禁止textarea拉伸*/
+// textarea[type="textarea"]{resize:none;}

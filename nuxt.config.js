@@ -1,4 +1,4 @@
-let serverConfig = require('./server.config');
+const serverConfig = require('./server.config');
 export default {
   /*
    ** Nuxt rendering mode
@@ -62,7 +62,6 @@ export default {
     '~/plugins/axios',
     '~/plugins/router',
     { src: '~/plugins/ElementUI', ssr: true },
-    // { src: '~/static/js/iconfont', ssr: false },
     { src: '~/plugins/sentry', ssr: false }
   ],
   /*
@@ -102,16 +101,27 @@ export default {
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {
+    // 分离css样式
     extractCSS: true,
     extend(config, { isDev, isClient }) {
+      // 处理sentry报错乱码
       if (isClient && !isDev) {
-        config.devtool = 'source-map'   // 处理client
+        config.devtool = 'source-map';
+      }
+      // Run ESLint on save
+      if (isDev && isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/
+        });
       }
     },
     // 开启打包分析
-    // analyze: true, 	
-    // assetFilter: function(assetFilename) {	    		
-    //   return assetFilename.endsWith('.js');	    	
+    // analyze: true,
+    // assetFilter: function(assetFilename) {
+    //   return assetFilename.endsWith('.js');
     // },
     // 切割打包模块
     optimization: {
@@ -134,11 +144,12 @@ export default {
     babel: {
       plugins: [
         [
-          "component",
-          { libraryName: "element-ui", styleLibraryName: "theme-chalk" },
+          'component',
+          { libraryName: 'element-ui', styleLibraryName: 'theme-chalk' },
         ],
       ],
     },
+
     vendor: ['axios', 'element-ui'],
   },
 };

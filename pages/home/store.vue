@@ -1,33 +1,35 @@
 <template>
-    <div class="store-container">
-        <h1>store</h1>
-        <nuxt-link to="/">store</nuxt-link>
-    </div>
+  <div class="store-container">
+    <h1>store</h1>
+    <nuxt-link to="/">
+      store
+    </nuxt-link>
+  </div>
 </template>
 
 <script>
 export default {
-    name: '',
-    components: {
+  name: '',
+  components: {
 
-    },
-    data() {
-        return {
+  },
+  data() {
+    return {
 
-        };
-    },
-    watch: {
+    };
+  },
+  watch: {
 
-    },
-    created() {
+  },
+  created() {
 
-    },
-    mounted() {
+  },
+  mounted() {
 
-    },
-    methods: {
+  },
+  methods: {
 
-    },
+  },
 };
 </script>
 

@@ -1,0 +1,124 @@
+@charset "utf-8";
+
+.color-fff{color: #FFFFFF;}
+.color-ccc{color: #cccccc;}
+.color-666{color: #666666;}
+.color-333{color: #333333;}
+.color-000{color: #000000;}
+.color-999{color: #999999;}
+
+.font-px12{font-size: 12px;}
+.font-px14{font-size: 14px;}
+.font-px16{font-size: 16px;}
+.font-px18{font-size: 18px;}
+.font-px20{font-size: 20px;}
+.font-px22{font-size: 22px;}
+.font-px24{font-size: 24px;}
+.font-px26{font-size: 26px;}
+.font-px28{font-size: 28px;}
+.font-px30{font-size: 30px;}
+.font-px32{font-size: 32px;}
+.font-px34{font-size: 34px;}
+.font-px36{font-size: 36px;}
+.font-px38{font-size: 38px;}
+
+.pull-right{float: right;}
+.pull-left{float: left;}
+
+.clearfix:after, .clearfix:before{ display: table; line-height: 0;  content: ""; }
+.clearfix:after{clear: both;} 
+.clearfix { zoom: 1; }
+
+.border-bt{border-bottom: 1px solid #e6e6e6;}
+.border-top{border-top: 1px solid #e6e6e6;}
+
+/*设置padding,margin值*/
+.pd-px10{padding: 10px;}
+.pd-px15{padding:15px;}
+.pd-px30{padding:30px;}
+
+.pd-tb-px10{padding: 10px 0;}
+.pd-tb-px15{padding: 15px 0;}
+.pd-tb-px30{padding: 30px 0;}
+
+.pd-lr-px10{padding:0 10px;}
+.pd-lr-px15{padding:0 15px;}
+.pd-lr-px30{padding:0 30px;}
+
+.mg-px10{margin: 10px;}
+.mg-top-px10{margin-top: 10px;}
+.mg-bottom-px10{margin-bottom: 10px;}
+.mg-left-px10{margin-left: 10px;}
+.mg-right-px10{margin-right: 10px;}
+
+.mg-top-px15{margin-top: 15px;}
+.mg-bottom-px15{margin-bottom: 15px;}
+.mg-left-px15{margin-left: 15px;}
+.mg-right-px15{margin-right: 15px;}
+
+.mg-top-px30{margin-top: 30px;}
+.mg-bottom-px30{margin-bottom: 30px;}
+.mg-left-px30{margin-left: 30px;}
+.mg-right-px30{margin-right: 30px;}
+
+/* 字体粗细 */
+.font-weight-400 {
+    font-weight: 400;
+}
+.font-weight-500 {
+    font-weight: 500;
+}
+.font-weight-600 {
+    font-weight: 600;
+}
+.font-weight-700 {
+    font-weight: 700;
+}
+.font-weight-bold {
+    font-weight: bold;
+}
+/* 设置文本 */
+.text-cen {
+    text-align: center;
+}
+.text-lf {
+    text-align: left;
+}
+.text-rt {
+    text-align: right;
+}
+/*单行溢出*/
+.one-txt-cut{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+/*多行溢出 手机端使用*/
+.txt-cut{
+    overflow : hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+/* 显示方式 */
+.vertical-middle{
+    vertical-align: middle;
+}
+.vertical-top{
+    vertical-align: top;
+}
+.vertical-bottom{
+    vertical-align: bottom;
+}
+
+.flex-between {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+  
+.flex-box {
+    display: flex;
+    align-items: center;
+}
