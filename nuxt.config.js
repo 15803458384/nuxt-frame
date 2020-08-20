@@ -68,6 +68,9 @@ export default {
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
    */
+  router: {
+    middleware: 'setHeaders'
+  },
   components: true,
   /*
    ** Nuxt.js dev-modules

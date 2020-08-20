@@ -3,9 +3,8 @@
  * 处理请求、响应错误信息
  */
 import { Message } from 'element-ui';  // 引用饿了么UI消息组件
+import { getCookie } from '~/utils/storage';
 import axios from 'axios'; // 引用axios
-// create an axios instance
-console.log('后端地址', process.env.API_URL);
 const service = axios.create({
   baseURL: process.env.API_URL, // 所有异步请求都加上/api,nginx转发到后端Springboot
   withCredentials: true, // send cookies when cross-domain requests
@@ -15,10 +14,10 @@ const service = axios.create({
 // request interceptor
 service.interceptors.request.use(
   config => {
-    // do something before request is sent
-    // config.headers['-Token'] = getToken()
-    config.headers['Authorization'] = 'getToken()';
-    // console.log('client===========',config.headers)
+    let token = getCookie('userInfo');
+    if (token) {
+      config.headers['Authorization'] = token;
+    }
     return config;
   },
   error => {

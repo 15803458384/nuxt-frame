@@ -16,6 +16,7 @@
     "@nuxtjs/dotenv": "^1.4.1",
     "cross-env": "^7.0.2",
     "element-ui": "^2.13.2",
+    "js-cookie": "^2.2.1",
     "nuxt": "^2.14.0",
     "raven-js": "^3.27.2"
   },

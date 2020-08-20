@@ -8,10 +8,38 @@
 </template>
 
 <script>
+import { fetchList } from '~/api/home';
 export default {
   layout: 'customize',
   name: 'Login',
   components: {},
+  async asyncData(context) {
+    let [res2] = await Promise.all([
+      // 获取数据
+      // context.$axios
+      //   .post('/mall/activity', {
+      //     pageIndex: 1,
+      //     pageSize: 20,
+      //     type: 'PROMO'
+      //   })
+      //   .then((res) => {
+      //     console.log('这是nuxt--axios');
+      //     return res;
+      //   }),
+      // 获取数据
+      fetchList({
+        pageIndex: 1,
+        pageSize: 20,
+        type: 'PROMO'
+      }).then((res) => {
+        console.log('这是axios');
+        return res;
+      })
+    ]);
+    return {
+      friendList: res2.data
+    };
+  },
   data() {
     return {};
   },

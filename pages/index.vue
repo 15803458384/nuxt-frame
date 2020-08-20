@@ -52,18 +52,18 @@ import { mapState, mapMutations, mapActions, mapGetters } from 'vuex';
 import { fetchList } from '~/api/home';
 export default {
   async asyncData(context) {
-    let [res1, res2] = await Promise.all([
+    let [res2] = await Promise.all([
       // 获取数据
-      context.$axios
-        .post('/mall/activity', {
-          pageIndex: 1,
-          pageSize: 20,
-          type: 'PROMO'
-        })
-        .then((res) => {
-          console.log('这是nuxt--axios');
-          return res;
-        }),
+      // context.$axios
+      //   .post('/mall/activity', {
+      //     pageIndex: 1,
+      //     pageSize: 20,
+      //     type: 'PROMO'
+      //   })
+      //   .then((res) => {
+      //     console.log('这是nuxt--axios');
+      //     return res;
+      //   }),
       // 获取数据
       fetchList({
         pageIndex: 1,
@@ -75,8 +75,6 @@ export default {
       })
     ]);
     return {
-      blogList: res1.data,
-      blogTotal: res1.total * 1,
       friendList: res2.data
     };
   },
@@ -126,8 +124,10 @@ export default {
     ...mapMutations('user', ['SET_VALUE']),
     async change() {
       await this.getInfo('Hello ydw');
+      await this.$store.dispatch('setToken', '{%22token%22:%22eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJbXCIxNTgwMzQ1ODM4NFwiLFwiUFVSQ0hBU0VcIl0iLCJpYXQiOjE1OTc4OTA4MTgsImV4cCI6MTYwMDQ4MjgxOCwibmJmIjoxNTk3ODkwODE4fQ.xVQbDnx2xIzeb3YILWxdODSTfeYZjnaIPfdxs95-eMg%22%2C%22phone%22:%2215803458384%22%2C%22groupName%22:%22%E9%BE%99%E6%8E%A7%22%2C%22partyId%22:%22A1132%22%2C%22statusId%22:%22NOT_PASSED%22%2C%22websiteId%22:%22WE_AH%22%2C%22openId%22:%22oL9IoxK2wIlbJlPmEBBDw9pwC27I%22%2C%22isCommercialAllocation%22:false}');
       this.result = this.include(2);
       // this.SET_VALUE('Hello ydmm')
+
       this.$message({
         message: '操作成功',
         type: 'success',
