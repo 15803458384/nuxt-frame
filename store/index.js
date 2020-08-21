@@ -1,6 +1,6 @@
 
 
-import { getCookie, setCookie } from '~/utils/storage';
+import { setCookie } from '~/utils/storage';
 // getCookie('userInfo')
 const state = () => ({
   userInfo: ''
@@ -30,7 +30,7 @@ const actions = {
     console.log('nuxt init');
     if (req.headers.cookie) {
       let info = req.headers.cookie.split('=')[1];
-      console.log(typeof info);
+      console.log(info);
       commit('SET_USER_INFO', info);
     }
   },

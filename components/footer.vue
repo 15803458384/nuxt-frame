@@ -20,8 +20,8 @@ export default {
 
 <style scoped lang="scss">
 .footer-container {
-  background-color: #fff;
-  color: #000;
+  background-color: #000;
+  color: #fff;
   font-size: 60px;
   text-align: center;
 }

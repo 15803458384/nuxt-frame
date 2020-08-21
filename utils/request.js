@@ -8,7 +8,7 @@ import axios from 'axios'; // 引用axios
 const service = axios.create({
   baseURL: process.env.API_URL, // 所有异步请求都加上/api,nginx转发到后端Springboot
   withCredentials: true, // send cookies when cross-domain requests
-  timeout: 5000 // request timeout
+  timeout: 30 * 1000 // request timeout
 });
 
 // request interceptor

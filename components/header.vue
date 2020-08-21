@@ -20,8 +20,8 @@ export default {
 
 <style scoped lang="scss">
 .header-container {
-  background-color: #fff;
-  color: #000;
+  background-color: pink;
+  color: yellowgreen;
   font-size: 60px;
   text-align: center;
 }
